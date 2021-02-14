@@ -1,5 +1,7 @@
 import React from "react";
 
-function contactPage(props) {}
+function ContactPage(props) {
+  return <p>Is working </p>;
+}
 
-export default contactPage;
+export default ContactPage;

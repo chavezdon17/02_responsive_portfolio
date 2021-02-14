@@ -1,7 +1,10 @@
 import React from "react";
-import billboard from "../components/billboard";
-function homePage(props) {
-  return {};
+import Billboard from "../components/Billboard.js";
+
+function HomePage(props) {
+  return(
+  <Billboard title={props.title} subTitle={props.subTitle}/>
+  );
 }
 
-export default homePage;
+export default HomePage;

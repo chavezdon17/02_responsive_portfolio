@@ -1,5 +1,7 @@
 import React from "react";
 
-function aboutPage(props) {}
+function AboutPage(props) {
+  return <p>working</p>;
+}
 
-export default aboutPage;
+export default AboutPage;

@@ -1,19 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "./App.css";
-
 import Nav from "react-bootstrap/Nav";
+
 import NavbarBrand from "react-bootstrap/esm/NavbarBrand";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+
 import Footer from "./components/Footer";
 
-import router from "./pages/homePage";
-import homePage from "./pages/homePage";
-import aboutPage from "./pages/aboutPage";
-import contactPage from "./pages/contactPage";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class App extends React.Component {
       ],
       home: {
         title: "Past Projects",
-        text: " Project down below",
+        subTitle: "Project's down below",
       },
       about: {
         title: "About Me",
@@ -59,28 +59,31 @@ class App extends React.Component {
               </Nav>
             </NavbarCollapse>
           </Navbar>
-          <Router
+          <Switch>
+          <Route 
             path="/"
             exact
             render={() => (
-              <homePage
+              <HomePage
                 title={this.state.home.title}
-                subTitle={this.state.homePage}
+                subTitle={this.state.home.subTitle}
               />
             )}
           />
 
-          <Router
+          <Route
             path="/about"
-            render={() => <aboutPage title={this.state.home.title} />}
+            render={() => <AboutPage title={this.state.about.title} />}
           />
 
-          <Router
+          <Route
             path="/contact"
-            render={() => <contactPage title={this.state.home.title} />}
+            render={() => <ContactPage title={this.state.contact.title} />}
           />
+          </Switch>
           <Footer />
         </Container>
+
       </Router>
     );
   }
