@@ -66,7 +66,7 @@ class App extends React.Component {
             render={() => (
               <HomePage
                 title={this.state.home.title}
-                subTitle={this.state.home.subTitle}
+                subTitle={this.state.home.subTitle}x
               />
             )}
           />
