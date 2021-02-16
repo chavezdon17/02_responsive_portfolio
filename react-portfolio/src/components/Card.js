@@ -5,13 +5,14 @@ function Card(props) {
   return (
     <div
       className="d-inline-block b-card"
-      onClick={(e) => props.click(props.item)}
+      onClick={() => props.handleCardClick(props.item)}
     >
       <img
         className="b-card-image"
         src={props.item.imgSrc}
         alt={props.item.imgSrc}
       />
+
       {props.items.selected && (
         <CardInfo
           title={props.item.title}
